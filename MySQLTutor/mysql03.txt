@@ -1,0 +1,17 @@
+use northwind; 
+
+SELECT 'Hello, World';
+
+SELECT 10 + 3;
+
+SELECT 10 DIV 3;
+
+SELECT 10 / 3;
+
+SELECT job_title, first_name, last_name FROM employees;
+
+SELECT job_title, first_name, last_name FROM employees ORDER BY job_title;
+
+SELECT job_title, first_name, last_name FROM employees ORDER BY job_title DESC;
+
+ SELECT job_title, first_name, last_name FROM employees ORDER BY job_title DESC, first_name;
