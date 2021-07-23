@@ -1,1 +1,1 @@
-Hello, World
+CREATE DATABASE db01;
