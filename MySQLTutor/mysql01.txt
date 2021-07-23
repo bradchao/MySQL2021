@@ -1,1 +1,9 @@
-CREATE DATABASE db01;
+// 以下是 Mac
+% cd /Applications/MAMP/Library/bin
+% ./mysql -u root -h 127.0.0.1 -P 3306 -p
+...
+mysql> show databases;
+....
+mysql> exit
+Bye
+% 
