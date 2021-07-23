@@ -11,3 +11,16 @@ Bye
 % brew install nmap
 ...
 % nmap -v 127.0.0.1
+
+// 以下是 Windows
+cd c:\MAMP\bin\mysql\bin
+...> mysql -u root -h 127.0.0.1 -P 3306 -p
+...
+mysql> show databases;
+...
+mysql> exit
+Bye
+...>
+
+
+
