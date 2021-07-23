@@ -3,3 +3,6 @@ CREATE DATABASE `iii`;
 CREATE TABLE `iii`.`cust` ( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , `cname` VARCHAR(100) NOT NULL , 
 `birthday` DATE NOT NULL , `tel` VARCHAR(100) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
+INSERT INTO `cust` (cname, birthday, tel) VALUES ('Brad', '1999-01-02', '0912-123456');
+
+INSERT INTO `cust` (`id`, `cname`, `birthday`, `tel`) VALUES (NULL, 'Peter', '2019-06-04', '0911-222333');
