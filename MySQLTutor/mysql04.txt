@@ -43,3 +43,24 @@ WHERE ProductID = 3
 
 SELECT sum(Quantity) totalQty FROM OrderDetails	 
 WHERE ProductID = 3
+
+// 統計各個 City 的員工數量
+SELECT City, COUNT(EmployeeID) AS NumsOfEmployee FROM Employees GROUP BY City
+
+SELECT City, COUNT(EmployeeID) AS NumsOfEmployee FROM Employees 
+GROUP BY City
+HAVING COUNT(EmployeeID) > 1
+
+// 查詢語法的處理順序
+1. SELECT ... FROM
+2. WHERE
+3. GROUP BY ... HAVING
+4. ORDER BY
+5. LIMIT
+
+
+
+
+
+
+
