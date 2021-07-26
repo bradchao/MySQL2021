@@ -36,3 +36,10 @@ SELECT OrderID, Freight, Freight*1.1 FreightTotal FROM Orders
 WHERE Freight*1.1 >= 500
 
 SELECT UnitPrice, Quantity, Discount, UnitPrice*Quantity*(100-Discount)/100 as Price FROM OrderDetails
+
+// 編號 3 的 ProductID 列出訂單明細的數量
+SELECT OrderID, ProductID, Quantity FROM OrderDetails	 
+WHERE ProductID = 3
+
+SELECT sum(Quantity) totalQty FROM OrderDetails	 
+WHERE ProductID = 3
