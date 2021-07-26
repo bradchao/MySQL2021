@@ -15,3 +15,7 @@ SELECT job_title, first_name, last_name FROM employees ORDER BY job_title;
 SELECT job_title, first_name, last_name FROM employees ORDER BY job_title DESC;
 
  SELECT job_title, first_name, last_name FROM employees ORDER BY job_title DESC, first_name;
+ 
+ // 老師 請問甚麼事git
+ // Git Server => 程式碼備份伺服器 => 程式版本控制伺服器
+ 
