@@ -93,8 +93,14 @@ GROUP BY CustomerID HAVING COUNT(OrderID) > 15
 ORDER BY Nums DESC
 LIMIT 5
 
+// 運費取小數點一位並四捨五入
+SELECT Freight, ROUND(Freight, 1) AS F2, ROUND(Freight, 2) AS F3 FROM Orders
 
-
+SELECT Freight, ROUND(Freight, 1) AS F2, 
+ROUND(Freight, 2) AS F3,  
+ROUND(Freight, 0) AS F4,
+ROUND(Freight, -1) AS F5
+FROM Orders
 
 
 
