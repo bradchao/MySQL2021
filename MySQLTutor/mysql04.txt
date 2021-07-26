@@ -181,3 +181,12 @@ WHERE SupplierID IN (
         WHERE Categories.CategoryName = 'Seafood'
     )
 )
+
+// Join => 所有訂單的員工名字
+SELECT Employees.EmployeeID, Employees.FirstName, Orders.OrderID, Orders.OrderDate
+FROM Orders JOIN Employees 
+ON (Employees.EmployeeID = Orders.EmployeeID)
+ORDER BY Orders.OrderDate
+
+
+
