@@ -1,0 +1,13 @@
+// 2021-07-26
+
+// 查看職稱, FirstName, LastName 依照職稱排序, 再依照 FirstName 反向排序
+SELECT Title, FirstName, LastName FROM Employees
+ORDER BY Title, FirstName DESC
+
+// 哪些員工不是業務代表 'Sales Representative'
+SELECT Title, FirstName, LastName FROM Employees
+WHERE Title <> 'Sales Representative'
+
+// 哪些員工其 Region 資料為IS(或不為 IS NOT ) NULL
+SELECT Title,FirstName,LastName,Region FROM Employees
+WHERE Region IS NOT NULL
