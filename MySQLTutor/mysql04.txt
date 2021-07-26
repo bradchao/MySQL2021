@@ -172,3 +172,12 @@ WHERE SupplierID IN (
 	WHERE CompanyName IN ('Tokyo Traders',"Mayumi's",'Svensk Sjfda AB')
 )
 
+// Seafood => ?
+SELECT Suppliers.CompanyName FROM Suppliers 
+WHERE SupplierID IN (
+    SELECT SupplierID FROM Products
+    WHERE CategoryID IN (
+        SELECT CategoryID FROM Categories
+        WHERE Categories.CategoryName = 'Seafood'
+    )
+)
