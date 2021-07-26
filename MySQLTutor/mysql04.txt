@@ -134,6 +134,27 @@ EXTRACT(YEAR FROM BirthDate)
 FROM Employees
 ORDER BY EXTRACT(MONTH FROM BirthDate)
 
+// w3school上面navbar還有一個SQL 跟現在在看的這邊的myＳＱＬ有差別嗎？
+
+// 子查詢
+// Orders 中 OrderID = 10290 中的 CustomerID = ?
+SELECT CustomerID FROM Orders
+WHERE OrderID = 10290
+// COMMI
+// Customers 中 CustomerID = 'COMMI' 的公司名稱為?
+
+// 合成以下
+SELECT CompanyName FROM Customers
+WHERE CustomerID = (
+	SELECT CustomerID FROM Orders
+	WHERE OrderID = 10280
+)
+
+SELECT CompanyName FROM Customers
+WHERE CustomerID IN (
+	SELECT CustomerID FROM Orders
+	WHERE OrderID = 10280 OR OrderID = 10270 OR OrderID = 10290
+)
 
 
 
