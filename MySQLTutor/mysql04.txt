@@ -58,6 +58,38 @@ HAVING COUNT(EmployeeID) > 1
 4. ORDER BY
 5. LIMIT
 
+// 老師可以再講一次，為何要強調這些語法的排序？
+// 文法, 語法
+
+// 業務代表 'Sales Representative' 中各個城市員工數量小於 3
+SELECT City, COUNT(EmployeeID) AS NumsOfEmployee FROM Employees
+WHERE Title = 'Sales Representative'
+GROUP BY City
+HAVING NumsOfEmployee < 3
+
+// 列出員工表中的城市, 不重複
+SELECT DISTINCT City FROM Employees ORDER BY City
+//顯示出員工表中有幾個City
+SELECT COUNT(DISTINCT City) FROM Employees
+
+// OrderDetail 各個商品的總銷售量
+SELECT ProductID, SUM(Quantity) AS TotalQty FROM OrderDetails
+GROUP BY ProductID
+
+// OrderDetail 各個商品的總銷售量 小於 200 單位
+SELECT ProductID, SUM(Quantity) AS TotalQty FROM OrderDetails
+GROUP BY ProductID
+HAVING SUM(Quantity) < 200
+
+// 統計各個商品的平均單價
+SELECT ProductID, AVG(UnitPrice) AS AvgPrice FROM OrderDetails
+GROUP BY ProductID
+HAVING AVG(UnitPrice) > 70
+ORDER BY AvgPrice
+
+
+
+
 
 
 
