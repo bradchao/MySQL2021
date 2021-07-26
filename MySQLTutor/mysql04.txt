@@ -111,6 +111,14 @@ SELECT ProductID, COUNT(OrderID), SUM(UnitPrice), AVG(UnitPrice) FROM OrderDetai
 GROUP BY ProductID
 HAVING ProductID <= 2
 
+// 員工入職年齡V1
+SELECT LastName, BirthDate, HireDate, YEAR(HireDate) - YEAR(BirthDate) AS HireAge FROM Employees
+
+// 員工入職年齡V2
+SELECT LastName, BirthDate, HireDate,
+YEAR(HireDate) - YEAR(BirthDate) AS HireAge1,
+ROUND(DATEDIFF(HireDate,BirthDate)/365,0) AS HireAge2 
+FROM Employees
 
 
 
