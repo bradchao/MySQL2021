@@ -87,7 +87,11 @@ GROUP BY ProductID
 HAVING AVG(UnitPrice) > 70
 ORDER BY AvgPrice
 
-
+// 統計各個客戶的訂單數
+SELECT CustomerID, COUNT(OrderID) AS Nums FROM Orders 
+GROUP BY CustomerID HAVING COUNT(OrderID) > 15
+ORDER BY Nums DESC
+LIMIT 5
 
 
 
