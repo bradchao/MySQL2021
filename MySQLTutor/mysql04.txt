@@ -23,3 +23,16 @@ WHERE UnitsInStock <= ReorderLevel
 SELECT EmployeeID, OrderID, CustomerID, RequiredDate, ShippedDate FROM Orders
 WHERE ShippedDate > RequiredDate
 
+// 老師, 想請教 sql 檔的匯入, 怎麼我import之後table name 都是小寫, 我看sql檔 確實是大寫, 是我多做了什麼? 或是少做什麼嗎? 
+// 如果未來就業DBA 有需要甚麼證照嗎?類似MCTS或者ORACLE OCA證照嗎?
+
+// LastName >= 'N' 是什麼意思嗎? => 78
+// NA, P...
+
+// 兩個以上欄位資料相加形成一個欄位資料
+SELECT concat(FirstName, ' ', LastName) FROM Employees
+
+SELECT OrderID, Freight, Freight*1.1 FreightTotal FROM Orders
+WHERE Freight*1.1 >= 500
+
+SELECT UnitPrice, Quantity, Discount, UnitPrice*Quantity*(100-Discount)/100 as Price FROM OrderDetails
