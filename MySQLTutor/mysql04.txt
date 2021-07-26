@@ -120,8 +120,19 @@ YEAR(HireDate) - YEAR(BirthDate) AS HireAge1,
 ROUND(DATEDIFF(HireDate,BirthDate)/365,0) AS HireAge2 
 FROM Employees
 
+SELECT MONTH(BirthDate), DATE_FORMAT(BirthDate,'%m-%d-%Y') FROM Employees
 
+SELECT FirstName, LastName,
+MONTH(BirthDate) AS M1, 
+DATE_FORMAT(BirthDate,'%m') AS M2
+FROM Employees
+ORDER BY M2
 
+SELECT FirstName, LastName,
+BirthDate,
+EXTRACT(YEAR FROM BirthDate)
+FROM Employees
+ORDER BY EXTRACT(MONTH FROM BirthDate)
 
 
 
