@@ -188,5 +188,8 @@ FROM Orders JOIN Employees
 ON (Employees.EmployeeID = Orders.EmployeeID)
 ORDER BY Orders.OrderDate
 
-
+SELECT e.EmployeeID, e.FirstName, o.OrderID, o.OrderDate
+FROM Orders o JOIN Employees e 
+ON (e.EmployeeID = o.EmployeeID)
+ORDER BY o.OrderDate
 
