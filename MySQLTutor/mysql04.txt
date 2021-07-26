@@ -102,6 +102,20 @@ ROUND(Freight, 0) AS F4,
 ROUND(Freight, -1) AS F5
 FROM Orders
 
+// 老師請問可以在講解一次ＳＵＭ跟ＣＯＵＮＴ嗎，我觀念有點搞混了
+Sum => 數值加總
+Count => 筆數加總
+1 => 38
+2 => 44
+SELECT ProductID, COUNT(OrderID), SUM(UnitPrice), AVG(UnitPrice) FROM OrderDetails
+GROUP BY ProductID
+HAVING ProductID <= 2
+
+
+
+
+
+
 
 
 
