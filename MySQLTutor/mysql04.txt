@@ -15,6 +15,11 @@ WHERE Region IS NOT NULL
 // 顯示商品名稱, 庫存量(UnitsInStock), 訂單量(UnitsOnOrder), 安全庫存量(ReorderLevel)
 SELECT ProductName, UnitsInStock, UnitsOnOrder, ReorderLevel FROM Products
 
+// 庫存量低於安全庫存量
+SELECT ProductName, UnitsInStock, UnitsOnOrder, ReorderLevel FROM Products
+WHERE UnitsInStock <= ReorderLevel
 
-
+// 訂單中顯示出超過需求日期才寄出的訂單
+SELECT EmployeeID, OrderID, CustomerID, RequiredDate, ShippedDate FROM Orders
+WHERE ShippedDate > RequiredDate
 
