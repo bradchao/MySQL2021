@@ -47,3 +47,25 @@ WHERE o.ShippedDate > o.RequiredDate
 AND o.OrderDate >= '1998-01-01'
 ORDER BY o.CustomerID
 --------------------------------------------------------
+請問 join跟子查詢之間有差別嗎
+join on 條件 用 副表=主表
+07271014的時候 用 主表=副表,
+雖然兩表交換不影響查詢結果
+----------------------------------------------------------
+哪些公司的訂單數量在10張以上的, 列出公司名稱, 以及單量, 在1997-01-01年以後
+=> Orders
+=> WHERE OrderDate >= '1997--01-01'
+=> GROUP BY CustomerID => COUNT(OrderID)
+=> JOIN Customers ON o.CustomerID = c.CustomerID
+
+SELECT c.CompanyName, COUNT(o.OrderID) AS nums
+FROM Customers c
+	JOIN Orders o ON (c.CustomerID = o.CustomerID)
+WHERE o.OrderDate >= '1997-01-01'
+GROUP BY c.CustomerID
+HAVING nums >= 10
+ORDER BY nums DESC
+------------------------------------------------------------
+
+
+
