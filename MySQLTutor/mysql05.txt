@@ -16,6 +16,27 @@ SELECT o.OrderID, c.CompanyName, e.FirstName, e.LastName
 FROM Orders o
 	JOIN Employees e ON (e.EmployeeID = o.EmployeeID)
     JOIN Customers c ON (c.CustomerID = o.CustomerID)
-
-
+---------------------------------------------------------------
+SELECT o.OrderID, c.CompanyName, e.FirstName, e.LastName
+FROM Orders o
+	JOIN Employees e ON (e.EmployeeID = o.EmployeeID)
+    JOIN Customers c ON (c.CustomerID = o.CustomerID)
+WHERE o.ShippedDate > o.RequiredDate AND o.OrderDate >= '1998-01-01'
+ORDER BY c.CompanyName    
+-------------------------------------------------------
+SELECT o.OrderID, c.CompanyName, e.FirstName, e.LastName
+FROM Orders o, Employees e, Customers c
+WHERE (e.EmployeeID = o.EmployeeID) 
+AND (c.CustomerID = o.CustomerID)
+AND o.ShippedDate > o.RequiredDate 
+AND o.OrderDate >= '1998-01-01'
+ORDER BY c.CompanyName
+------------------------------------------------------------
+SELECT o.OrderID, o.CustomerID, c.CompanyName, c.ContactName, o.EmployeeID, e.FirstName, e.LastName
+FROM Orders o, Employees e, Customers c
+WHERE o.EmployeeID=e.EmployeeID AND o.CustomerID = c.CustomerID
+AND o.ShippedDate > o.RequiredDate 
+AND o.OrderDate >= '1998-01-01'
+ORDER BY o.CustomerID
+--------------------------------------------------------------
 
