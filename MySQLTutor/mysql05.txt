@@ -66,6 +66,18 @@ GROUP BY c.CustomerID
 HAVING nums >= 10
 ORDER BY nums DESC
 ------------------------------------------------------------
+哪些公司的銷售額是 > 10000 => Home Work
+--------------------------------------------------
+SELECT DISTINCT od1.ProductID, od1.UnitPrice
+FROM OrderDetails od1
+WHERE od1.UnitPrice = (
+	SELECT MAX(UnitPrice)
+    FROM OrderDetails od2
+    WHERE od1.ProductID = od2.ProductID
+)
+ORDER BY od1.ProductID
+
+
 
 
 
