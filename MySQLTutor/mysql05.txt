@@ -10,4 +10,12 @@ lower_case_table_names=2
 剛提到的auto_increment=11 不是因為定義要雙位數, 
 是因為已經有10筆資料(而且佔用了1~10), 所以下一筆從11開始, 
 如果資料繼續新增, 這個數值也會一直增加, 表示下一筆自動產生的值
---------------------------
+-------------------------------------------------------
+逾時訂單需求日期, 1998
+SELECT o.OrderID, c.CompanyName, e.FirstName, e.LastName
+FROM Orders o
+	JOIN Employees e ON (e.EmployeeID = o.EmployeeID)
+    JOIN Customers c ON (c.CustomerID = o.CustomerID)
+
+
+
