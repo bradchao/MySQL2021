@@ -91,6 +91,13 @@ FROM Orders o
     JOIN Employees e ON (o.EmployeeID = e.EmployeeID)
 GROUP BY o.EmployeeID 
 ORDER BY total DESC
+--- 驗算 ---
+SELECT SUM(UnitPrice * Quantity)
+FROM OrderDetails
+WHERE OrderID in  (
+	SELECT OrderID FROM Orders
+    WHERE Orders.EmployeeID = 6
+)
 
 
 
