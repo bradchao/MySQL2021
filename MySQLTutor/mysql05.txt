@@ -39,4 +39,11 @@ AND o.ShippedDate > o.RequiredDate
 AND o.OrderDate >= '1998-01-01'
 ORDER BY o.CustomerID
 --------------------------------------------------------------
-
+SELECT o.OrderID, o.CustomerID, c.CompanyName, c.ContactName, o.EmployeeID, e.FirstName, e.LastName
+FROM Orders o
+	JOIN Employees e ON (o.EmployeeID = e.EmployeeID)
+    JOIN Customers c ON (o.CustomerID = c.CustomerID)
+WHERE o.ShippedDate > o.RequiredDate 
+AND o.OrderDate >= '1998-01-01'
+ORDER BY o.CustomerID
+--------------------------------------------------------
