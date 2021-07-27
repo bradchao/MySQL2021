@@ -127,7 +127,13 @@ UPDATE students SET ch = 99, eng = 97, math= 95 WHERE cID = 3;
 UPDATE students SET ch = 89, eng = 79, math= 59 WHERE cName LIKE '林%'
 UPDATE students SET ch = RAND()*101, eng = RAND()*101, math = RAND()*101
 UPDATE students SET ch = FLOOR(RAND()*101), eng = FLOOR(RAND()*101), math = FLOOR(RAND()*101)
+// 0 - 100
+// 這個有辦法用ROUND()來寫嗎
+// 0 <= RAND() < 1
+// 0 <= RAND() *101 < 101
+// round(rand()*100)+1 => 1
 
+SELECT cID,cName,ch,eng,math, (ch+eng+math) as score, (ch+eng+math)/3 as avg FROM students
 
 
 
