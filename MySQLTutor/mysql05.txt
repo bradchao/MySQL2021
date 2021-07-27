@@ -135,6 +135,23 @@ UPDATE students SET ch = FLOOR(RAND()*101), eng = FLOOR(RAND()*101), math = FLOO
 
 SELECT cID,cName,ch,eng,math, (ch+eng+math) as score, (ch+eng+math)/3 as avg FROM students
 
+CREATE VIEW scoreView as
+SELECT cID,cName,ch,eng,math, (ch+eng+math) as score, (ch+eng+math)/3 as avg FROM students
+
+CREATE VIEW girlScore as
+SELECT cID,cName,ch,eng,math, (ch+eng+math) as score FROM students WHERE cSex = 'F'
+
+SELECT cID,cName,ch,eng,math,(ch+eng+math)/3 AS avg,
+CASE
+	WHEN ((ch+eng+math))/3 >= 90 THEN 'A'
+    WHEN ((ch+eng+math))/3 >= 80 THEN 'B'
+    WHEN ((ch+eng+math))/3 >= 70 THEN 'C'
+    WHEN ((ch+eng+math))/3 >= 60 THEN 'D'
+    ELSE 'E'
+END as level
+FROM students
+
+
 
 
 
