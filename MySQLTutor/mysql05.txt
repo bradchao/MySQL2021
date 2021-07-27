@@ -98,7 +98,16 @@ WHERE OrderID in  (
 	SELECT OrderID FROM Orders
     WHERE Orders.EmployeeID = 6
 )
-
+------------------------
+SELECT p.ProductName, s.CompanyName, s.ContactName
+FROM Products p
+	JOIN Suppliers s ON (p.SupplierID = s.SupplierID)
+LIMIT 10
+----------------------------
+SELECT p.ProductName, s.CompanyName, s.ContactName
+FROM Products p, Suppliers s 
+WHERE p.SupplierID = s.SupplierID
+LIMIT 10
 
 
 
