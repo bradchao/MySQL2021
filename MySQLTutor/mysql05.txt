@@ -105,6 +105,11 @@ FROM Products p
 LIMIT 10
 ----------------------------
 SELECT p.ProductName, s.CompanyName, s.ContactName
+FROM Products p
+	JOIN Suppliers s USING (SupplierID)
+LIMIT 10
+----------------------------
+SELECT p.ProductName, s.CompanyName, s.ContactName
 FROM Products p, Suppliers s 
 WHERE p.SupplierID = s.SupplierID
 LIMIT 10
