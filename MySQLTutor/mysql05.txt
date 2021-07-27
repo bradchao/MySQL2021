@@ -116,5 +116,17 @@ LIMIT 10
 
 
 
+--------------------
+Use class
+
+ALTER TABLE students ADD COLUMN ch INT DEFAULT 0, ADD COLUMN eng INT DEFAULT 0,
+ADD COLUMN math INT DEFAULT 0
+
+UPDATE students SET ch = 99, eng = 97, math= 95
+UPDATE students SET ch = 99, eng = 97, math= 95 WHERE cID = 3;
+UPDATE students SET ch = 89, eng = 79, math= 59 WHERE cName LIKE '林%'
+
+
+
 
 
